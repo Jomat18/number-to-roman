@@ -29,7 +29,7 @@ class ElementsList {
         ~ElementsList();
         bool AddElement(Element *pElement);
         int find(char letter);
-        int RomantoNumber(string s);
+        void RomantoNumber(string s);
         friend ostream& operator<<(ostream &os, const ElementsList& list);
 };
 
@@ -73,7 +73,7 @@ int ElementsList::find(char letter) {
 	return -1;
 }
 
-int ElementsList::RomantoNumber(string s) {
+void ElementsList::RomantoNumber(string s) {
 
     int resp = 0, temp;
 
@@ -154,10 +154,12 @@ int main() {
     cout<<list;
 
     string s;
-    cout<<"Ingrese un numero romano: ";
-    cin>>s;
 
-    list.RomantoNumber(s);
+    while(true) {
+    	cout<<"Ingrese un numero romano: ";
+    	cin>>s;
+    	list.RomantoNumber(s);
+    }
 
     return 0;
 }
